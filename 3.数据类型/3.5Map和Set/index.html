@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let student = [["tom",100],["perter",53],["jack",99]];
+        console.log(student);
+        // console.log(student[0][1]);
+        //二维数组遍历
+        for (let i = 0; i < student.length; i++) {
+            for (let j = 0; j < student[i].length; j++) {
+                console.log(student[i][j]);
+            }
+        }
+
+
+    //    使用Map
+        console.log("Map:");
+        let map = new Map([
+            ["tom",100],
+            ["jack",54],
+            ["peter",99]
+        ]);
+        //查询
+        let score = map.get("jack");
+        console.log(score);
+    //    添加
+        map.set("admin",111);
+        console.log(map);
+
+
+    //    Set
+        console.log("Set:");
+        let set = new Set([1,1,1,1,1,65,73]);
+        console.log(set);
+        set.add(5);
+        set.add(7);
+        set.delete(1);
+        console.log(`是否包含65：${set.has(65)}`);
+
+
+    //    迭代器iterator
+        console.log(`iterator遍历map:`);
+        let iter = map[Symbol.iterator]();
+        /*console.log(iter.next());
+        console.log(iter.next());
+        console.log(iter.next());
+        console.log(iter.next());
+        console.log(iter.next());*/
+        for (let i = 0; i < map.size; i++) {
+            console.log(iter.next());
+        }
+
+        console.log(`iterator遍历set:`);
+        let iter2 = set[Symbol.iterator]();
+        for (let i = 0; i < set.size; i++) {
+            console.log(iter2.next());
+        }
+
+
+        console.log("使用for of");
+        let arr = [1,2,3];
+        for (let x of set){
+            console.log(x);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function work(x, y, z) {
+        if (arguments.length === 1) {
+            if (typeof x !== "number"){
+                throw "输入的数据非法！";
+            }else
+                 return "正方形,面积为：" + x * x;
+        } else if (arguments.length === 2) {
+            if (typeof x !== "number" || typeof  y !== "number"){
+                throw "输入的数据非法！";
+            }else
+                return "长方形，面积是：" + x * y;
+        } else {
+            if (typeof x || typeof  y || typeof z !== "number"){
+                throw "输入的数据非法！";
+            }else
+                return "体积为：" + x * y * z;
+        }
+    }
+</script>
+</body>
+</html>

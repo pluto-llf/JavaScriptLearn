@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        "use strict";
+
+        // 可以换行显示
+        // let msg = `
+        // hello
+        // world
+        // Li
+        // `;
+
+        let name = "LiFaFei";
+        let age = "21";
+        let msg = `hello,${name},你的年龄是${age}`;
+        console.log(msg);
+        console.log("hello,"+name+",你的年龄是："+age);
+
+        /*
+        * 字符串的一些常用方法
+        * */
+
+        //  字符串长度
+        console.log("name的长度是："+name.length);
+    //    字符串的不可变性
+        console.log(name[0]);
+        // name[0] = 1;
+        console.log(name);      //报错-控制台
+
+    //      大小写转换
+        console.log(name.toUpperCase());
+        console.log(name.toLowerCase());
+
+    //    返回下标
+        console.log(name.indexOf("i"));
+    //    截取字符串
+        console.log("截取字符串："+name.substring(0,2));
+        console.log(name.substring(0));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

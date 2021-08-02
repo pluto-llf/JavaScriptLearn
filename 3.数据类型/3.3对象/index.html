@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    //JavaScript中的所有的键都是字符串，值是任意对象！
+
+    let person = {
+        name:"Li",
+        age:21,
+        email:"1769119195@qq.com",
+        score:0
+    }
+
+//    对象赋值
+    person.name = "李发飞";
+    console.log(person);
+
+//    使用一个不存在的对象属性，不会报错！undefined
+    console.log(`使用不存在的对象属性：${person.haha}`);
+
+//    动态的删减属性，通过delete删除对象的属性
+    console.log(`删除后:${delete person.name}`);
+    console.log(person);
+
+//    动态的添加，直接给新的属性添加值即可
+    console.log(`添加haha:${person.hah = "haha"}`);
+    console.log(person);
+
+//    判断属性值是否在这个对象中！xxx in xxx
+    console.log(`判断是否存在name:${"name" in person}`);
+    console.log(`判断是否存在toString:${"toString" in person}`);
+
+//    判断一个属性是否是这个对象自身拥有的 hasOwnProperty()
+    console.log(`判断自身是否拥有toString：${person.hasOwnProperty("toString")}`);
+    console.log(`判断自身是否拥有age：${person.hasOwnProperty("age")}`);
+</script>
+</body>
+</html>

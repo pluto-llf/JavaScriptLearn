@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        "use strict";
+
+        //for遍历
+        let age = [1,4,3,25,34,46,453,634];
+        for (let i = 0; i < age.length; i++) {
+            console.log(age[i]);
+        }
+
+    //    while遍历
+        let j = 0;
+        while (j < age.length){
+            console.log(age[j]);
+            j++;
+        }
+    //    do-while遍历
+        let k = 0;
+        do{
+            console.log(age[k]);
+            k++;
+        }while (k<age.length);
+
+    //    for each
+        console.log("forEach用法");
+        age.forEach(function (value,num,age) {
+            console.log(age[num]);
+        });
+        console.log("第二种");
+        age.forEach(function (value, index, array) {
+            console.log(value);
+        });
+
+    //    for...in
+        console.log("for...in");
+        for (let i in age){
+            console.log(age[i])
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

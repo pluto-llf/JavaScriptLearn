@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        <!--        示例-->
+        //    绝对值函数
+        //      方式一
+        function abs(x,a) {
+
+            console.log("x=>"+x);
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+            //两个参数则执行这里
+            if (arguments.length === 2){
+
+            }else if (arguments.length === 3){
+
+            }else{
+
+            }
+
+
+
+            //手动抛出异常
+            if (typeof x !== "number") {
+                throw "Not a Number";
+            } else {
+                if (x >= 0) {
+                    return x;
+                } else
+                    return -x;
+            }
+        }
+
+        //    方式二
+        /* var abs2 = function (x) {
+             if (x >=0){
+                 return x;
+             }else
+                 return -x;
+         }*/
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        "use strict";
+
+        //数组长度
+        let arr = [1,2,3,4,5,6,"1","2"];
+        console.log(`数组的长度是${arr.length}`);
+
+    //    改变数组的值,字符串不可以改变
+        arr[0] = 10;
+        console.log("改变后的数组值为:"+arr);
+        arr[0] = 1;
+    //    字符串的"1"和数字 1 是不同的
+        console.log(arr.indexOf(1));
+        console.log(arr.indexOf("1"));
+
+
+    //    截取数组,和字符串的substring方法一样
+        console.log(`截取后的数组是:${arr.slice(3)}`);
+        console.log(arr.slice(2,5));
+
+    //    push()，pop()尾部。push：压入到尾部，pop：弹出尾部的一个元素
+        console.log(`尾部添加：${arr.push("a","b")}`);
+        console.log(arr);
+        console.log(`尾部删除：${arr.pop()}`);
+        console.log(arr);
+
+    //  unshift(),shift() 头部。unshift：压入到头部，shift：弹出头部的一个元素
+        console.log("头部添加："+arr.unshift(999,"unshift"));
+        console.log(arr);
+        console.log("头部删除："+arr.shift());
+        console.log(arr);
+
+    //    数组排序，反转
+        let array = [1,3,6,4,5];
+        console.log(`排序前：${array}`);
+        console.log(`排序后：${array.sort()}`);
+        console.log(`反转后：${array.reverse()}`);
+
+    //    concat()并没有修改数组，只是会返回一个新的数组
+        let array2 = array.concat(["A","B","C"]);       //这里是用了一个新的数组接收改变后的
+        console.log("返回一个新的数组："+array2);
+        console.log("没有改变原本的数组："+array);
+
+    //    连接符 join
+        console.log(`连接符添加后：${array2.join("---")}`);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
