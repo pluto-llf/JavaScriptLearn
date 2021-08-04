@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let user = {
+        name: "李发飞",
+        age: 21,
+        sex: "男"
+    };
+
+    let s = JSON.stringify(user);   //转化为JSON
+    console.log(s);
+    let parse = JSON.parse(s);      //解析JSON
+    console.log(JSON.parse('{"name":"李发飞","age":21,"sex":"男"}'));
+    console.log(parse);
+</script>
+</body>
+</html>

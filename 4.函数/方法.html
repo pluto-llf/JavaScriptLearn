@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    //第一种方法
+
+    var person =  {
+        name:"李发飞",
+        birth:2020,
+        age:function getAge() {
+            var myAge = new Date().getFullYear();
+            return myAge - person.birth;
+        }
+    };
+    console.log(person.age());
+    console.log(person.name);
+
+    //第二种方法
+    function getAge() {
+        let myAge = new Date().getFullYear();
+        return myAge - this.birth;
+    }
+    let personal = {
+        name: "李发飞",
+        birth: 2020,
+        age: getAge
+    };
+    console.log(personal.age());
+    console.log(getAge());
+</script>
+</body>
+</html>

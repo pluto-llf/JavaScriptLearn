@@ -11,19 +11,30 @@
             if (typeof x !== "number"){
                 throw "输入的数据非法！";
             }else
-                 return "正方形,面积为：" + x * x;
+                return "正方形,面积为：" + x * x;
         } else if (arguments.length === 2) {
             if (typeof x !== "number" || typeof  y !== "number"){
                 throw "输入的数据非法！";
             }else
                 return "长方形，面积是：" + x * y;
         } else {
-            if (typeof x || typeof  y || typeof z !== "number"){
+            if (typeof x !== "number" || typeof  y !== "number" || typeof z !== "number"){
                 throw "输入的数据非法！";
             }else
                 return "体积为：" + x * y * z;
         }
     }
+
+
+
+//    使用...rest接收多余参数
+    function calculate(a,b,...rest) {
+        console.log("a>="+a);
+        console.log("b>="+b);
+        console.log(rest);
+    }
+
+//    多余的都放在了rest数组里面
 </script>
 </body>
 </html>

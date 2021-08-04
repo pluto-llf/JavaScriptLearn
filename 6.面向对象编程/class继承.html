@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class student{
+        constructor(name){
+            this.name = name;
+        }
+        hello(){
+            alert("hello~"+this.name);
+        }
+    }
+
+    class smallStudent extends student{
+        constructor(name,grade) {
+            super(name);
+            this.grade = grade;
+        }
+        talk(){
+            console.log("我是一名小学生，我的名字是"+this.name+"，我考了"+this.grade+"分");
+            alert("我是一名小学生，我的名字是"+this.name+"，我考了"+this.grade+"分");
+        }
+    }
+
+    let s1 = new student("小明");
+    s1.hello();
+    console.log(s1.name);
+
+    let s2 = new smallStudent("小王",99);
+    s2.talk();
+    console.log(s2.name);
+</script>
+</body>
+</html>

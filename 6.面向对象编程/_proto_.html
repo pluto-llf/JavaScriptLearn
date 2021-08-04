@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    "use strict";
+    let student = {
+        name: "student",
+        age: 12,
+        run:function () {
+            console.log(this.name+"run...");
+        }
+    };
+
+    let ming = {
+        name:"xiaoming"
+    };
+
+
+    let bird = {
+        fly:function () {
+            console.log(this.name+("flying..."))
+        }
+    };
+
+
+    //两个下划线
+    ming.__proto__ = student;
+    // console.log(ming.run());
+    ming.run();
+    console.log(ming.age);
+    //覆盖掉
+    ming.__proto__ = bird;
+    ming.fly();
+    console.log(ming.age);
+
+</script>
+</body>
+</html>

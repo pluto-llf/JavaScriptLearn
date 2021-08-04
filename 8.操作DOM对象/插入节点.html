@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="js" style="color: red;font-size: 40px">JavaScript</p>
+    <div id="list">
+        <p id="se">JavaSE</p>
+        <p id="ee">JavaEE</p>
+        <p id="me">JavaME</p>
+    </div>
+
+    <script>
+<!--        插入到list里面-->
+        let js = document.getElementById("js");
+        let list = document.getElementById("list");
+        list.appendChild(js);
+
+    //    通过创建新的节点进行插入
+    //  创建的是标签
+        let newP = document.createElement("p");
+        newP.id = "newP";
+        newP.innerText = "Hello,新创建的标签P";
+        list.appendChild(newP);
+    </script>
+</body>
+</html>

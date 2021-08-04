@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="father">
+        <h1>标题一</h1>
+        <p id="p1">p1</p>
+        <p class="p2">p2</p>
+    </div>
+
+<!--删除节点的步骤：先获取父节点，再通过父节点删除自己-->
+    <script>
+        let h1 = document.getElementsByTagName("h1");
+        let p1 = document.getElementById("p1");
+        let p2 = document.getElementsByClassName("p2");
+        let father = document.getElementById("father");
+    //    删除p1，先获取父节点
+        let parentElement = p1.parentElement;
+        parentElement.removeChild(p1);
+
+    //    方法二
+    //    先获取到所有的子节点
+        father.children;
+        father.removeChild(father.children[1]);
+    </script>
+</body>
+</html>

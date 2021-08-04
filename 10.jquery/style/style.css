@@ -1,0 +1,14 @@
+#mouseMove{
+    width: 500px;
+    height: 500px;
+    margin:  auto;
+    border: 1px solid greenyellow;
+    text-align: center;
+    line-height: 500px;
+    font-size: 20px;
+    color: aqua;
+}
+p{
+    margin: 0 auto;
+    text-align: center;
+}
