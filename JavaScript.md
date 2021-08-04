@@ -573,7 +573,7 @@ Set：无序不重复的集合，可以去重
 > 定义方式二
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508182120582.png)
-function(x){…}这是一个匿名函数。但是可以吧结果赋值给abs，通过abs就可以调用函数！
+function(x){…}这是一个**匿名函数**。但是可以吧结果赋值给abs，通过abs就可以调用函数！
 方式一和方式二等价！
 
 > 调用函数
@@ -590,7 +590,7 @@ abs(-10) //10
 
 > arguments
 
-arguments是一个JS免费赠送的关键字；
+`arguments`是一个JS免费赠送的关键字；
 代表，传递进来的所有参数，是一个数组！
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508183337762.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
 问题：arguments包含所有的参数，我们有时候想使用多余的参数来进行附加操作。需要排除已有参数~
@@ -623,7 +623,7 @@ rest参数只能写在最后面，必须用…标识。
 结果：x undefined
 说明：js执行引擎，自动提升了y的声明，但是不会提升变量y的赋值；
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508215909640.png)
-这个是在javascript建立之初就存在的特性。 养成规范：所有 的变量定义都放在函数的头部，不要乱放，便于代码维护；
+这个是在javascript建立之初就存在的特性。 ==**养成规范：所有 的变量定义都放在函数的头部，不要乱放，便于代码维护；**==
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/2020050822470141.png)
 
 > 全局变量
@@ -633,9 +633,9 @@ rest参数只能写在最后面，必须用…标识。
 全局对象window
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508225326543.png)
 
-alert() 这个函数本身也是一个window的变量；
+alert() 这个函数本身也是一个==window==的变量；
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508225810801.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
-javascript实际上只有一个全局作用域，任何变量（函数也可以视为变量），假设没有在函数作用范围内找到，就会向外查找，如果在全局作用域都没有找到，就会报错 Refrence
+javascript实际上只有一个全局作用域，任何变量（函数也可以视为变量)，假设没有在函数作用范围内找到，就会向外查找，如果在全局作用域都没有找到，就会报错 Refrence
 
 > 规范
 
@@ -651,11 +651,11 @@ ES6的let关键字，解决了局部作用域冲突的问题！
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231207856.png)
 建议大家都用let去定义局部作用域的变量；
 
-> 常量
+> 常量	
 
 在ES6之前，怎么定义常量：只有用全部大写字母命名的变量就是常量；建议不要修改这样的值。
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508231525623.png)
-在ES6引入了常量关键字 const
+在ES6引入了==**常量关键字 const**==
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200508232049107.png)
 
 ## 4.3、方法
@@ -758,10 +758,46 @@ class关键字，是在ES6引入的
 	var xiaoming = new Student("xiaoming");
 	var xiaohong = new XiaoStudent("xiaohong",1);
 </script>
-12345678910111213141516171819202122232425
 ```
 
-本质：查看对象原型
+
+
+==我自己写的代码==
+
+```javascript
+class student{
+        constructor(name){
+            this.name = name;
+        }
+        hello(){
+            alert("hello~"+this.name);
+        }
+    }
+
+    class smallStudent extends student{
+        constructor(name,grade) {
+            super(name);
+            this.grade = grade;
+        }
+        talk(){
+            console.log("我是一名小学生，我的名字是"+this.name+"，我考了"+this.grade+"分");
+            alert("我是一名小学生，我的名字是"+this.name+"，我考了"+this.grade+"分");
+        }
+    }
+    
+    let s1 = new student("小明");
+    s1.hello();
+    console.log(s1.name);
+
+    let s2 = new smallStudent("小王",99);
+    s2.talk();
+    console.log(s2.name);
+}
+```
+
+
+
+==**本质**==：查看对象原型
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509211811667.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
 
 > 原型链
@@ -805,7 +841,7 @@ Navigator封装了浏览器的信息
 
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225316614.png)
 
-> location(重要)
+> ==location(重要)==
 
 location代表当前页面的URL信息
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509225614305.png)
@@ -860,11 +896,12 @@ DOM：文档对象模型
 
 删除节点的步骤：先获取父节点，再通过父节点删除自己
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509232903448.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
-注意：删除多个节点的时候，children是在时刻变化的，删除节点的时候一定要注意。
+
+==注意：删除多个节点的时候，children是时刻在变化的，删除节点的时候一定要注意！==
 
 > 插入节点
 
-我们获得了某个Dom节点，假设这个dom节点是空的，我们通过innerHTML就可以增加一个元素了，但是这个Dom节点已经存在元素了，我们就不能这么干了！会产生覆盖
+我们获得了某个Dom节	点，假设这个dom节点是空的，我们通过innerHTML就可以增加一个元素了，但是这个Dom节点已经存在元素了，我们就不能这么干了！会产生覆盖
 
 追加
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200509233556254.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3Bhbl9oMTk5NQ==,size_16,color_FFFFFF,t_70)
@@ -891,7 +928,6 @@ DOM：文档对象模型
     
     document.getElementByTagName('head')[0].appendChild(myStyle);
 </script>
-123456789101112131415161718
 ```
 
 > insertBefore
@@ -951,7 +987,6 @@ list.insertBefore(js,ee);
         
     </script>
 </body>
-123456789101112131415161718192021222324252627
 ```
 
 > 提交表单。md5加密密码，表单优化
@@ -993,7 +1028,7 @@ list.insertBefore(js,ee);
                 var pwd = document.getElementById("password");
                 var md5pwd = document.getElementById("md5-password");
                 //pwd.value = md5(pwd,value);
-                md5pwd.value = mad5(pwd.value);
+                md5pwd.value = md5(pwd.value);
                 //可以校验判断表单内容，true就是通过提交，false就是阻止提交
                 return false;
                 
@@ -1002,7 +1037,6 @@ list.insertBefore(js,ee);
         
     </body>
 </html>
-123456789101112131415161718192021222324252627282930313233343536373839404142434445
 ```
 
 # 10、jQuery
@@ -1035,7 +1069,6 @@ jQuery库，里面存在大量的JavaScript函数
         </script>
     </body>
 </html>
-1234567891011121314151617
 ```
 
 > 选择器
@@ -1053,7 +1086,6 @@ document.getElementByClassName();
 $('p').click();//标签选择器
 $('#id1').click();//id选择器
 $('.class1').click;//class选择器
-123456789101112
 ```
 
 文档工具站：http://jquery.cuishifeng.cn/
@@ -1102,7 +1134,6 @@ mouseup()(jQuery)
         </script>
     </body>
 </html>
-12345678910111213141516171819202122232425262728293031
 ```
 
 > 操作DOM
@@ -1110,35 +1141,33 @@ mouseup()(jQuery)
 节点文本操作
 
 ```javascript
+//不添加参数：获取；添加参数：设置
+
 $('#test-ul li[name=python]').text();//获得值
 $('#test-ul li[name=python]').text('设置值');//设置值
 $('#test-ul').html();//获得值
 $('#test-ul').html('<strong>123</strong>');//设置值
-1234
 ```
 
 CSS的操作
 
 ```javascript
 $('#test-ul li[name=python]').css({"color","red"});
-1
 ```
 
 元素的显示和隐藏，：本质display:none
 
-```
+```javascript
 $('#test-ul li[name=python]').show();
 $('#test-ul li[name=python]').hide();
-12
 ```
 
 娱乐测试
 
-```
+```javascript
 $(window).width()
 $(window).height()
 $('#test-ul li[name=python]').toggle();
-123
 ```
 
 未来ajax()；
